@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login_screen.dart'; // Importando a tela de login
-import '../widgets/map_widget.dart';
+import '../widgets/bus_map.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
           },
         ),
       ),
-      body: MapWidget(), // O widget do mapa
+      body: BusMapWidget(), // O widget do mapa
     );
   }
 }

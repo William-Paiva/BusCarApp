@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -54,10 +56,12 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text('BusCar',
-                    style: GoogleFonts.raleway(
-                        fontSize: 100,
-                        fontWeight: FontWeight.bold,
-                        color: const Color.fromARGB(255, 16, 26, 136))),
+                    style: TextStyle(
+                      fontSize: 100,
+                      fontWeight: FontWeight.bold,
+                      color: const Color.fromARGB(255, 16, 26, 136),
+                      fontFamily: 'sans-serif',
+                    )),
                 Container(
                   decoration: BoxDecoration(
                     color: Colors.blueAccent,
@@ -101,6 +105,18 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Text('Entrar'),
                 ),
                 SizedBox(height: 20),
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => RegisterScreen()),
+                    );
+                  },
+                  child: Text(
+                    "Não tem uma conta? Cadastre-se",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
                 AnimatedOpacity(
                   opacity: _showSuccessMessage ? 1.0 : 0.0,
                   duration: Duration(milliseconds: 500),
